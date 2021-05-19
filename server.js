@@ -26,7 +26,7 @@ server.use(upload.single('fileName'), function (req, res, next) {
     if (req.file !== undefined && req.body !== undefined) {
         const userEmail = req.body.user_email;
         const fileName = req.file.filename;
-        const filePath = `./public/assets/${fileName}`;
+        const filePath = `./public/uploads/${fileName}`;
         const response = {userEmail, fileName, filePath};
         jsonContents.files[jsonContents.files.length] = response;
         jsonfile.writeFileSync(jsonFilePath, jsonContents);
