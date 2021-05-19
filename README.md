@@ -3,7 +3,7 @@
 ## Notes:
 ```
   #1. Create these folders like public/uploads at root.
-  #2. execute command node server.js
+  #2. Execute command `npm start`
   #3. Post file upload request using any REST client at http:/localhost:3000/files.
   #4. Check uploaded files at http:/localhost:3000
 ```
