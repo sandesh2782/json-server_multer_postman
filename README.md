@@ -12,7 +12,7 @@
   #4. Check uploaded files at http:/localhost:3000
 ```
 
-##Snaps:
+## Snaps:
 
 ![image](https://user-images.githubusercontent.com/49634982/118856219-560aa000-b8f4-11eb-936b-9ee94fb5ee28.png)
 
