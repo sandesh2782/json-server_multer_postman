@@ -38,5 +38,5 @@ server.use(upload.single('fileName'), function (req, res, next) {
 });
 server.use(router)
 server.listen(3000, () => {
-  console.log('JSON Server is running and accepting upload file requests.')
+  console.log('JSON Server is running and accepting upload file requests at http://localhost:3000 ')
 });
