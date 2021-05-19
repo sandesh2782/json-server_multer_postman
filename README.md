@@ -8,8 +8,8 @@
   #2. Execute commands:
       `npm install`
       `npm start`
-  #3. Post file upload request using any REST client at http:/localhost:3000/files.
-  #4. Check uploaded files at http:/localhost:3000
+  #3. Post file upload request using any REST client at http://localhost:3000/files.
+  #4. Check uploaded files at http://localhost:3000
 ```
 
 ## Snaps:
