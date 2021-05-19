@@ -20,17 +20,23 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.use(upload.single('fileName'), function (req, res, next) {
-    const userEmail = req.body.user_email;
-    const fileName = req.file.filename;
-    const filePath = `./public/assets/${fileName}`;
     const jsonFilePath = path.join(__dirname, 'files.json')
     const jsonContents = jsonfile.readFileSync(jsonFilePath);
-    const response = {userEmail, fileName, filePath};
-    jsonContents.files[jsonContents.files.length] = {userEmail, fileName, filePath}
-    jsonfile.writeFileSync(jsonFilePath, jsonContents);
-    next(res.json(response));
+
+    if (req.file !== undefined && req.body !== undefined) {
+        const userEmail = req.body !== undefined ? req.body.user_email : '';
+        const fileName = req.file.filename;
+        const filePath = `./public/assets/${fileName}`;
+        const response = {userEmail, fileName, filePath};
+        jsonContents.files[jsonContents.files.length] = response;
+        jsonfile.writeFileSync(jsonFilePath, jsonContents);
+        next(res.json(response));
+    }
+    else {
+        next(res.json(jsonContents));
+    }
 });
 server.use(router)
 server.listen(3000, () => {
   console.log('JSON Server is running and accepting upload file requests.')
-})
+});
