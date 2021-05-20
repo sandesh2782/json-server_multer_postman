@@ -14,7 +14,7 @@
 
 ## Snaps:
 
-![image](https://user-images.githubusercontent.com/49634982/118856219-560aa000-b8f4-11eb-936b-9ee94fb5ee28.png)
+![image](https://user-images.githubusercontent.com/49634982/118924501-ccda8400-b95a-11eb-87ff-a01152902804.png)
 
 
 ![image](https://user-images.githubusercontent.com/49634982/118856509-abdf4800-b8f4-11eb-85d7-408f99cd2b99.png)
