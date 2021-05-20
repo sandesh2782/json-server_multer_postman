@@ -2,9 +2,10 @@ const jsonServer = require('json-server');
 const jsonfile = require('jsonfile');
 const path = require('path');
 let multer  = require('multer');
+const uploadPath = 'public/uploads';
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, 'public/uploads'));
+    cb(null, path.join(__dirname, uploadPath));
   },
   filename: function (req, file, cb) {
     cb(null, `profile-${Date.now()}${path.extname(file.originalname)}`);
@@ -24,9 +25,9 @@ server.use(upload.single('fileName'), function (req, res, next) {
     const jsonContents = jsonfile.readFileSync(jsonFilePath);
 
     if (req.file !== undefined && req.body !== undefined) {
-        const userEmail = req.body.user_email;
+        const userEmail = req.body !== undefined ? req.body.user_email : '';
         const fileName = req.file.filename;
-        const filePath = `./public/uploads/${fileName}`;
+        const filePath = `./${uploadPath}/${fileName}`;
         const response = {userEmail, fileName, filePath};
         jsonContents.files[jsonContents.files.length] = response;
         jsonfile.writeFileSync(jsonFilePath, jsonContents);
